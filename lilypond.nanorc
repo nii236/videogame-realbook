@@ -1,0 +1,25 @@
+#################################################
+#																#
+#																#
+#			Syntax Hilighting for Lilypond			#
+#																#
+#																#
+#################################################
+
+syntax "lilypond" "\.ly$"
+color brightmagenta "["].*["]"
+color cyan "\\[a-zA-Z]+"
+color red "[<>]"
+color magenta,yellow "(<<|>>)"
+color cyan,blue start="[_^]?\\[<>]" end="\\!|[\^|\_]?\\[s|m|p|f|pp|ff|ppp|fff]?[p|f]+[z|p]?"
+color brightblue,blue "[\^|\_]?\\[s|m|p|f|pp|ff|ppp|fff]?[p|f]+[z|p]?"
+color brightred start="\(" end="\)"
+color brightcyan,blue start="\[" end="\]"
+color green,white start="\(\[|\[\(" end="\)\]|\]\)"
+color green start="#[(]" end="[)]"
+color magenta "#:[a-z|A-Z|-]*"
+color brightblue "\{|\}"
+color red,black start="%\{" end="%\}"
+color red,black "%.*$"
+
+
