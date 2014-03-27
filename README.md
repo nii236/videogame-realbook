@@ -19,3 +19,6 @@ TODO
   + Work out a way to accept song requests and contributions
 + Make a nice coverpage
 
+Changelog
+=========
+27 March 2014 - First revision
