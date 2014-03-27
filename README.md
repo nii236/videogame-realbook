@@ -1,6 +1,6 @@
 The Videogame Realbook
 ==================
-This project aims to create a jazz fakebook comprising of only videogame tunes.
+This project aims to create a jazz fakebook comprising of only videogame tunes. For some reason this hasn't been attempted very often so I decided to start this project myself in an attempt to learn some basic scripting, Lilypond, LaTeX and actually use the book for performances along the way.
 
 The majority of tunes are transcribed from the handwritten sheets on [The Videogame Realbook](http://thevideogamerealbook.tumblr.com/) website.
 
