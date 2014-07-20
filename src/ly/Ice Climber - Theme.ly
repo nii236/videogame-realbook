@@ -4,12 +4,6 @@
 	composer = "Akito Nakatsuka" 
 }
 
-\paper {
-line-width = 15\cm
-indent = 0\cm
-}
-
-
 melody = \relative c' {
 	\clef treble
 	\key c \major
@@ -35,33 +29,7 @@ melody = \relative c' {
 
 }
 	
-
-
-text = \lyricmode {
- % Lyrics here
-}
-
 harmonies = \chordmode {
 	% % Chord changes here
 	c1:7 s s s f:7 s c:7 s g:7 f:7 c:7 g:7 
-}
-\score {
-	<<
-	\new ChordNames {
-		\set chordChanges = ##t
-		\harmonies
-	}
-	\new Voice = "one" { \melody }
-	\new Lyrics \lyricsto "one" \text
-	>>
-	\layout { 
-		\context {
-			\Score
-			\override NonMusicalPaperColumn #'line-break-permission = ##f
-			\override NonMusicalPaperColumn #'page-break-permission = ##f
-		}
-	}
-	\midi {
-
-	}
 }

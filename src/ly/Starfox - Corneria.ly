@@ -4,12 +4,6 @@
 	composer = "Hajime Hirasawa" 
 }
 
-\paper {
-line-width = 15\cm
-indent = 0\cm
-}
-
-
 melody = \relative c' {
 	\clef treble
 	\key bes \major
@@ -79,13 +73,7 @@ melody = \relative c' {
 	}
 }
 
-
-text = \lyricmode {
- % Lyrics here
-}
-
 harmonies = \chordmode {
-	% % Chord changes here
 	g1:5 s s s
 	g1:5 s ees:5 f:6 |
 	g:6 s ees:5 f:6 |
@@ -97,24 +85,4 @@ harmonies = \chordmode {
 	s s g:5 s |
 	s s a:5 s |
 	s s g:5 s
-}
-\score {
-	<<
-	\new ChordNames {
-		\set chordChanges = ##t
-		\harmonies
-	}
-	\new Voice = "one" { \melody }
-	\new Lyrics \lyricsto "one" \text
-	>>
-	\layout { 
-		\context {
-			\Score
-			\override NonMusicalPaperColumn #'line-break-permission = ##f
-			\override NonMusicalPaperColumn #'page-break-permission = ##f
-		}
-	}
-	\midi {
-
-	}
 }

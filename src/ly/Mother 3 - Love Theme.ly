@@ -4,12 +4,6 @@
 	composer = "Shoko Sakai" 
 }
 
-\paper {
-	line-width = 15\cm
-	indent = 0\cm
-}
-
-
 melody = \relative c' {
 	\clef treble
 	\key d \major
@@ -48,39 +42,12 @@ melody = \relative c' {
 	}
 
 }
-	
-
-
-text = \lyricmode {
-% Lyrics here
-}
 
 harmonies = \chordmode {
-	% % Chord changes here
 	d1 fis:m7 b:M g:m 
 	a2 a:7/g d:/fis d:m/f e:m e:m7/d a:/cis
 	d1 fis:m7 b:m e:m
 	a2 a:7/g d:/fis d:m/f e:m7 a:7 d d:7 
 	g1 d e2:m a:7 d1 
 	fis:7 b:m7 e:m a:7
-}
-\score {
-	<<
-	\new ChordNames {
-		\set chordChanges = ##t
-		\harmonies
-	}
-	\new Voice = "one" { \melody }
-	\new Lyrics \lyricsto "one" \text
-	>>
-	\layout { 
-		\context {
-			\Score
-			\override NonMusicalPaperColumn #'line-break-permission = ##f
-\override NonMusicalPaperColumn #'page-break-permission = ##f
-		}
-	}
-	\midi {
-
-	}
 }

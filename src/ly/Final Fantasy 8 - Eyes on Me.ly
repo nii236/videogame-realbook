@@ -1,45 +1,13 @@
 \header {
 	title = "Final Fantasy 8" 
 	subtitle = "Eyes on Me" 
-	composer = "" 
-	arranger = ""
-	piece = ""
-	tagline = ""
 }
-
-\paper {
-line-width = 15\cm
-indent = 0\cm
-}
-% Macro to print single slash
-rs = {
-  \once \override Rest #'stencil = #ly:percent-repeat-item-interface::beat-slash
-  \once \override Rest #'thickness = #0.48
-  \once \override Rest #'slope = #1.7
-  r4
-}
-
-% Function to print a specified number of slashes
-comp = #(define-music-function (parser location count) ( integer?)
-  #{
-    \override Rest #'stencil = #ly:percent-repeat-item-interface::beat-slash
-    \override Rest #'thickness = #0.48
-    \override Rest #'slope = #1.7
-    \repeat unfold $count { r4 }
-    \revert Rest #'stencil
-  #}
-)
-
-
 
 melody = \relative c' {
 	\clef treble
 	\key c \major
 	\time 4/4
 
-	% Melody here
-	\autoBeamOn
-	% \tempo 4 = 130
 	\repeat volta 2{
 		\partial 8 g8 |
 		c4 d e g8 e~|
@@ -96,16 +64,9 @@ melody = \relative c' {
 	b8 d~d2~d8 c|
 	c1| \bar "|."
 			
-
-
-}
-
-text = \lyricmode {
- % Lyrics here
 }
 
 harmonies = \chordmode {
-	% % Chord changes here
 	\partial 8 s8
 	c1 a:m7 f g2:sus4 g:7
 	c1 e:m7 f g2:sus4 g:7
@@ -116,24 +77,4 @@ harmonies = \chordmode {
 	bes g:7 c g2:m7 c:7
 	f1 s e:m7 a:7
 	d:m7 d2:m7/g g:7 f1 c
-}
-\score {
- <<
- \new ChordNames {
- \set chordChanges = ##t
- \harmonies
- }
- \new Voice = "one" { \autoBeamOff \melody }
- \new Lyrics \lyricsto "one" \text
- >>
- \layout { 
-     \context {
-        \Score
-        \override NonMusicalPaperColumn #'line-break-permission = ##f
-        \override NonMusicalPaperColumn #'page-break-permission = ##f
-    }
- }
- \midi {
-
- }
 }

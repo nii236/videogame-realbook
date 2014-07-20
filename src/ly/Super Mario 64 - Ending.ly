@@ -4,42 +4,6 @@
 	 composer = "Koji Kondo" 
 	}
 
-	% #(define ((my-stencils start) grob) 
-	% (let* ((par-list (parentheses-item::calc-parenthesis-stencils grob)) 
-			% (null-par (grob-interpret-markup grob (markup #:null)))) 
-	  % (if start 
-		 % (list (car par-list) null-par) 
-		 % (list null-par (cadr par-list))))) 
-
-	% startParenthesis = #(define-music-function (parser location note) 
-	% (ly:music?) 
-	% "Add an opened parenthesis to the left of `note" 
-	% #{ 
-	  % \once \override ParenthesesItem #'stencils = #(my-stencils #t) 
-	  % \parenthesize $note 
-	% #}) 
-
-	% endParenthesis = #(define-music-function (parser location note) (ly:music?) 
-	% "Add a closed parenthesis to the right of `note" 
-	% #{ 
-	  % \once \override ParenthesesItem #'stencils = #(my-stencils #f) 
-	  % \parenthesize $note 
-	% #}) 
-
-
-
-	\paper {
-	line-width = 15\cm
-	indent = 0\cm
-	}
-	% Macro to print single slash
-	rs = {
-	  \once \override Rest #'stencil = #ly:percent-repeat-item-interface::beat-slash
-	  \once \override Rest #'thickness = #0.48
-	  \once \override Rest #'slope = #1.7
-	  r4
-	}
-
 	% Function to print a specified number of slashes
 	comp = #(define-music-function (parser location count) ( integer?)
 	  #{
@@ -133,14 +97,9 @@
 	r1 |
 	
 	   
-	}
+}
 
-	text = \lyricmode {
-	 % Lyrics here
-	}
-
-	harmonies = \chordmode {
-	 % Chord changes here
+harmonies = \chordmode {
 		% s1 c f |
 		% c f2 g c1 f2 g |
 		% c d:m e:m c f g c1 |
@@ -154,24 +113,4 @@
 		% des f:m/c bes:m des:/aes ges des:/f ees:m aes |
 		% des1 ges des ges |
 		% des ges2 ges:m des1 s1 
-	}
-
-	\score {
-		<<
-		\new ChordNames {
-			\set chordChanges = ##t
-			\harmonies
-		}
-		\new Voice = "one" { \autoBeamOn \melody }
-		\new Lyrics \lyricsto "one" \text
-		>>
-		\layout {
-			\context {
-				\Score
-				\override NonMusicalPaperColumn #'line-break-permission = ##f
-				\override NonMusicalPaperColumn #'page-break-permission = ##f
-			}
-
-		}
-		\midi { }
-	}
+}

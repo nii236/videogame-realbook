@@ -2,34 +2,7 @@
 	title = "Super Mario Galaxy" 
 	subtitle = "Beach Bowl Galaxy" 
 	composer = "Koji Kondo" 
-	arranger = ""
-	piece = ""
-	tagline = ""
 }
-
-\paper {
-line-width = 15\cm
-indent = 0\cm
-}
-% Macro to print single slash
-rs = {
-  \once \override Rest #'stencil = #ly:percent-repeat-item-interface::beat-slash
-  \once \override Rest #'thickness = #0.48
-  \once \override Rest #'slope = #1.7
-  r4
-}
-
-% Function to print a specified number of slashes
-comp = #(define-music-function (parser location count) ( integer?)
-  #{
-    \override Rest #'stencil = #ly:percent-repeat-item-interface::beat-slash
-    \override Rest #'thickness = #0.48
-    \override Rest #'slope = #1.7
-    \repeat unfold $count { r4 }
-    \revert Rest #'stencil
-  #}
-)
-
 
 
 melody = \relative c' {
@@ -37,9 +10,6 @@ melody = \relative c' {
 	\key a \major
 	\time 4/4
 
-	% Melody here
-	\autoBeamOn
-	% \tempo 4 = 130
 	g'1 |
 	a2. r8 a16 cis \bar "||"
 	e16 e8 e16 r e8 e16 r e8 e16 d8 cis |
@@ -89,12 +59,7 @@ melody = \relative c' {
 
 }
 
-text = \lyricmode {
- % Lyrics here
-}
-
 harmonies = \chordmode {
-	% % Chord changes here
 	a1 s a 
 	e:7 s a:7
 	s d a2:/e e:7 a1
@@ -107,24 +72,4 @@ harmonies = \chordmode {
 	d a b2:m e:7 a1
 	d2 e a fis:m b:m e:7 fis1:7 
 	b4:m cis:m d e a1 s1
-}
-\score {
- <<
- \new ChordNames {
- \set chordChanges = ##t
- \harmonies
- }
- \new Voice = "one" { \autoBeamOff \melody }
- \new Lyrics \lyricsto "one" \text
- >>
- \layout { 
-     \context {
-        \Score
-        \override NonMusicalPaperColumn #'line-break-permission = ##f
-        \override NonMusicalPaperColumn #'page-break-permission = ##f
-    }
- }
- \midi {
-
- }
 }

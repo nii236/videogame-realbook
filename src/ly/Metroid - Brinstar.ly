@@ -1,26 +1,12 @@
-\version "2.18.0"
-
-\include "LilyJAZZ.ily"
 \header {
 	title = "Metroid" 
 	subtitle = "Brinstar" 
-
-}
-
-\paper {
-line-width = 15\cm
-indent = 0\cm
 }
 
 melody = \relative c' {
 	\clef treble
 	\key c \major
 	\time 4/4
-        \jazzOn
-
-	% Melody here
-	\autoBeamOn
-	% \tempo 4 = 130
 	b1 |
 	c |
 	b |
@@ -60,12 +46,7 @@ melody = \relative c' {
 	fis \bar "|."|
 }
 
-text = \lyricmode {
- % Lyrics here
-}
-
 harmonies = \chordmode {
-	% % Chord changes here
 	g1 bes g bes
 	g bes g bes
 	g bes g bes 
@@ -74,24 +55,4 @@ harmonies = \chordmode {
 	f:/ees bes:/d f:/ees bes:/d
 	g s aes
 	ees:maj9 d:/a s
-}
-\score {
-	<<
-	\new ChordNames {
-		\set chordChanges = ##t
-		\harmonies
-	}
-	\new Voice = "one" { \autoBeamOff \melody }
-	\new Lyrics \lyricsto "one" \text
-	>>
-	\layout { 
-		\context {
-			\Score
-			\override NonMusicalPaperColumn #'line-break-permission = ##f
-			\override NonMusicalPaperColumn #'page-break-permission = ##f
-		}
-	}
-	\midi {
-
-	}
 }

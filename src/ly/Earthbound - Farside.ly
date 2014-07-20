@@ -1,26 +1,12 @@
-\include "LilyJAZZ.ily"
 \header {
 	title = "Earthbound" 
 	subtitle = "Farside" 
-	composer = "" 
-	arranger = ""
-	piece = ""
-	tagline = ""
-}
-
-\paper {
-	line-width = 15\cm
-	indent = 0\cm
 }
 
 melody = \relative c' {
 	\clef treble
 	\key g \major
 	\time 4/4
-        \jazzOn
-	% Melody here
-	\autoBeamOn
-	% \tempo 4 = 130
 	d'1~|
 	d2 e2 c2. e4~|
 	e2 d2 |
@@ -120,25 +106,4 @@ harmonies = \chordmode {
 	s e:7 a a:7
 	g:9/f s s s
 	s s s ef2 d:7sus
-}
-\score {
-	<<
-	\new ChordNames {
-		\set chordChanges = ##t
-		\harmonies
-	}
-	\new Voice = "one" { 
-		\melody 
-	}
-	>>
-	\layout { 
-		\context {
-			\Score
-			\override NonMusicalPaperColumn #'line-break-permission = ##f
-			\override NonMusicalPaperColumn #'page-break-permission = ##f
-		}
-	}
-	\midi {
-
-	}
 }

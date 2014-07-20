@@ -1,14 +1,7 @@
 \header {
 	title = "Castlevania III" 
 	subtitle = "Clockwork" 
-	composer = "" 
 }
-
-\paper {
-line-width = 15\cm
-indent = 0\cm
-}
-
 
 melody = \relative c' {
 	\clef treble
@@ -50,15 +43,8 @@ melody = \relative c' {
 	}
 
 }
-	
-
-
-text = \lyricmode {
- % Lyrics here
-}
 
 harmonies = \chordmode {
-	% % Chord changes here
 	g2:m a4:7.9- d:7.9- g2:m a4 d:7.9- g2 a4 aes |
 	g8 s4 s8 s s s2 a:dim g|m a4:dim d:7 |
 	g4:m a:dim g:m7/bes c:m cis2:dim7 d g:m a4:dim fis:dim |
@@ -66,24 +52,4 @@ harmonies = \chordmode {
 	ees1:maj7 d:7 ees:maj7 d:7 |
 	ees:maj7 d:7 cis:dim d2:sus d |
 	s4 s s fis:dim/g s2 g2:m s fis:dim7
-}
-\score {
-	<<
-	\new ChordNames {
-		\set chordChanges = ##t
-		\harmonies
-	}
-	\new Voice = "one" { \melody }
-	\new Lyrics \lyricsto "one" \text
-	>>
-	\layout { 
-		\context {
-			\Score
-			\override NonMusicalPaperColumn #'line-break-permission = ##f
-			\override NonMusicalPaperColumn #'page-break-permission = ##f
-		}
-	}
-	\midi {
-
-	}
 }

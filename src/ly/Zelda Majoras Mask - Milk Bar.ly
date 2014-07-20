@@ -1,45 +1,12 @@
 \header {
 	title = "Zelda: Majora's Mask" 
 	subtitle = "Milk Bar Theme" 
-	composer = "" 
-	arranger = ""
-	piece = ""
-	tagline = ""
 }
-
-\paper {
-line-width = 15\cm
-indent = 0\cm
-}
-% Macro to print single slash
-rs = {
-  \once \override Rest #'stencil = #ly:percent-repeat-item-interface::beat-slash
-  \once \override Rest #'thickness = #0.48
-  \once \override Rest #'slope = #1.7
-  r4
-}
-
-% Function to print a specified number of slashes
-comp = #(define-music-function (parser location count) ( integer?)
-  #{
-    \override Rest #'stencil = #ly:percent-repeat-item-interface::beat-slash
-    \override Rest #'thickness = #0.48
-    \override Rest #'slope = #1.7
-    \repeat unfold $count { r4 }
-    \revert Rest #'stencil
-  #}
-)
-
-
 
 melody = \relative c' {
 	\clef treble
 	\key bes \major
 	\time 4/4
-
-	% Melody here
-	\autoBeamOn
-	% \tempo 4 = 130
 
 	r4 ees g8 a bes a~|
 	a4 a8 g a g f4 ~ |
@@ -84,12 +51,7 @@ melody = \relative c' {
 	}
 }
 
-text = \lyricmode {
- % Lyrics here
-}
-
 harmonies = \chordmode {
-	% % Chord changes here
 	ees1 f bes g:7
 	ees f bes g2:7sus4 g:7
 	ees1 f bes g:7
@@ -99,24 +61,4 @@ harmonies = \chordmode {
 	c:7 s f s 
 	d:7 s g:m 
 	c:m7 f bes g:7
-}
-\score {
- <<
- \new ChordNames {
- \set chordChanges = ##t
- \harmonies
- }
- \new Voice = "one" { \autoBeamOff \melody }
- \new Lyrics \lyricsto "one" \text
- >>
- \layout { 
-     \context {
-        \Score
-        \override NonMusicalPaperColumn #'line-break-permission = ##f
-        \override NonMusicalPaperColumn #'page-break-permission = ##f
-    }
- }
- \midi {
-
- }
 }
