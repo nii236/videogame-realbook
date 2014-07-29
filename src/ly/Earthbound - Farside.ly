@@ -3,6 +3,8 @@
 	subtitle = "Farside" 
 }
 
+\include "macros.ily"
+
 melody = \relative c' {
 	\clef treble
 	\key g \major
@@ -15,7 +17,7 @@ melody = \relative c' {
 	\break
 	g2. a4~ |
 	a2. r4 |
-	d,,8 gis r c r ds r fis, |
+	d,,8 gis r c r dis r fis, |
 	r g r g g4 r |
 	\break
 	\repeat volta 2 {
@@ -57,6 +59,7 @@ melody = \relative c' {
 		}
 	}
 	\break
+%	\pageBreak
 	\key d \major
 	d2 b |
 	cis2 d4 e |
@@ -91,7 +94,7 @@ melody = \relative c' {
 }
 
 harmonies = \chordmode {
-	g1:9 s c:6 s g:9
+	g1:9 s c:6 s g:9 s
 	c:6.9 s s a:m7/d 
 	g:9 f:9 g:9 f
 	e:m a d s 
@@ -100,10 +103,12 @@ harmonies = \chordmode {
 	g:9 f:9 g:9 f:9
 	g:9 f:9 g:9 f:9
 
-	b:m fs b:m s 
-	b:m fs b:m s
+	b:m fis b:m s 
+	b:m fis b:m s
 	d a d s
 	s e:7 a a:7
 	g:9/f s s s
-	s s s ef2 d:7sus
+	s s s ees2 d:7sus
 }
+
+\include "template.ily"

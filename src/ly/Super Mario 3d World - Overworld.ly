@@ -1,30 +1,9 @@
 \header {
 	 title = "Super Mario 3d World" 
 	 subtitle = "Overworld Theme" 
-	 composer = "Unknown" 
 }
 
-	#(define ((my-stencils start) grob) 
-	(let* ((par-list (parentheses-item::calc-parenthesis-stencils grob)) 
-			(null-par (grob-interpret-markup grob (markup #:null)))) 
-	  (if start 
-		 (list (car par-list) null-par) 
-		 (list null-par (cadr par-list))))) 
-
-	startParenthesis = #(define-music-function (parser location note) 
-	(ly:music?) 
-	"Add an opened parenthesis to the left of `note" 
-	#{ 
-	  \once \override ParenthesesItem #'stencils = #(my-stencils #t) 
-	  \parenthesize $note 
-	#}) 
-
-	endParenthesis = #(define-music-function (parser location note) (ly:music?) 
-	"Add a closed parenthesis to the right of `note" 
-	#{ 
-	  \once \override ParenthesesItem #'stencils = #(my-stencils #f) 
-	  \parenthesize $note 
-	#}) 
+\include "macros.ily"
 
 melody = \relative c' {
 	\clef treble
@@ -72,12 +51,12 @@ melody = \relative c' {
 	\break
 	g8 f e16 f8 c16~c4~c16 c d f |
 	g8 f e16 f8 a16~a4~a16 e f c' |
-	c8. bes16~b8 a g c, d16 f8. |
-	f1 
-	\startParenthesis 
-		r16 c d f
-	\endParenthesis
-	\break
+	c8. bes16~bes8 a g c, d16 f8. |
+	f1  
+	%\startParenthesis 
+	%    r16 c d f
+	%\endParenthesis
+	\bar ".|"
 }
 
 harmonies = \chordmode {
@@ -93,3 +72,5 @@ harmonies = \chordmode {
 	 f d:m7 bes2 c f1 %(Dm7 Gm7 C7)
 }
 
+
+\include "template.ily"

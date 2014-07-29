@@ -4,7 +4,7 @@
 	 composer = "Hirokazu Tanaka" 
 	 piece = "Swing 16ths"
 }
-
+\include "macros.ily"
 melody = \relative c' {
 	\clef treble
 	\key c \major
@@ -50,3 +50,4 @@ harmonies = \chordmode {
 	f c:/e d:m c8 d:m dis:dim e:m |
 	f2 c:/e aes g:7
 }
+\include "template.ily"

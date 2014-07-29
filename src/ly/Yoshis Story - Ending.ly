@@ -3,6 +3,8 @@
 	subtitle = "Ending" 
 }
 
+\include "macros.ily"
+
 melody = \relative c' {
 	\clef treble
 	\key e \major
@@ -60,3 +62,5 @@ harmonies = \chordmode {
 	fis1 b2 b:m e1 s
 	e2 a:maj7 gis:m7.5- cis:m7 fis:m7 b:7 e:maj7 
 }
+
+\include "template.ily"

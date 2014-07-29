@@ -2,7 +2,7 @@
  title = "Nyan Cat" 
  composer = "Daniwell" 
 }
-
+\include "macros.ily"
 melody = \relative c' {
 	\clef treble
 	\key c \major
@@ -48,3 +48,4 @@ harmonies = \chordmode {
 	f1 a:m7/e d:m7 c2 c:7
 	f1 a:m7/e d:m7 c4 d:m c:/e e:7 c d:m dis:dim7 e:m7
 }
+\include "template.ily"

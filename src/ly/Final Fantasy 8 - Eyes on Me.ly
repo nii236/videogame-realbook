@@ -3,6 +3,8 @@
 	subtitle = "Eyes on Me" 
 }
 
+\include "macros.ily"
+
 melody = \relative c' {
 	\clef treble
 	\key c \major
@@ -78,3 +80,5 @@ harmonies = \chordmode {
 	f1 s e:m7 a:7
 	d:m7 d2:m7/g g:7 f1 c
 }
+
+\include "template.ily"

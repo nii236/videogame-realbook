@@ -3,7 +3,7 @@
   subtitle = "Airman"
 }
 
-
+\include "macros.ily"
 melody = \relative c'' {
 	\clef treble
 	\time 4/4
@@ -62,3 +62,5 @@ harmonies = \chordmode {
 	bes:7 s aes:maj7
 	s bes:7 g:7.5+.9-
 }
+
+\include "template.ily"

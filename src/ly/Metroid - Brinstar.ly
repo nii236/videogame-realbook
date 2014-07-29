@@ -3,6 +3,8 @@
 	subtitle = "Brinstar" 
 }
 
+\include "macros.ily"
+
 melody = \relative c' {
 	\clef treble
 	\key c \major
@@ -56,3 +58,5 @@ harmonies = \chordmode {
 	g s aes
 	ees:maj9 d:/a s
 }
+
+\include "template.ily"

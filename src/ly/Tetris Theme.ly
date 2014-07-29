@@ -3,6 +3,8 @@
 	subtitle = "Theme" 
 }
 
+\include "macros.ily"
+
 melody = \relative c' {
 	\clef treble
 	\key c \major
@@ -49,3 +51,5 @@ harmonies = \chordmode {
 	e:7 a:m e:7 a2:m a:7
 	d1:m a:m e:7 a:m
 }
+
+\include "template.ily"

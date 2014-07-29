@@ -4,6 +4,7 @@
 	composer = "Koji Kondo" 
 }
 
+\include "macros.ily"
 
 melody = \relative c' {
 	\clef treble
@@ -51,10 +52,11 @@ melody = \relative c' {
 	fis2 r8 b, b' gis |
 	e8. a16 r8 cis r16 cis8. bis8 cis |
 	d4 fis, a gis |
-	e2~e8 e fis16 cis8. |
+	\ottava #1
+	e'2~e8 e fis16 cis8. |
 	\break 
 	d4 e fis gis |
-	a,16 a a8 r4 a16 a a8 r4 |
+	a,16 a \ottava #0 a,8 r4 a16 a a8 r4 |
 	a16 a a8 r16 a8 a16 a4 r4|
 
 }
@@ -73,3 +75,5 @@ harmonies = \chordmode {
 	d2 e a fis:m b:m e:7 fis1:7 
 	b4:m cis:m d e a1 s1
 }
+   
+\include "template.ily"

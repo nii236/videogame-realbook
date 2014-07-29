@@ -3,6 +3,8 @@
 	subtitle = "2:00AM" 
 }
 
+\include "macros.ily"
+
 melody = \relative c'' {
 	\clef treble
 	\key a \major
@@ -19,11 +21,12 @@ melody = \relative c'' {
 }
 
 harmonies = \chordmode {
-	a1:maj7 g:maj7 a:maj7 g:maj7 |
-	a1:maj7 g:maj7 a:maj7 g:maj7 |
-	fis1:m7 b:7 e:7sus4 e:7 |
-	d1:maj7 cis:maj7 cis:m7 fis:7|
-	b1:m7 e:7 a:dim a |
-	fis1:m7 b:7 e:maj7 e:6 |
-	cis1:m fis:7 b:m9 e:7sus4
+	a2.:maj7 g:maj7 a:maj7 g:maj7 |
+	a2.:maj7 g:maj7 a:maj7 g:maj7 |
+	fis2.:m7 b:7 e:7sus4 e:7 |
+	d2.:maj7 cis:maj7 cis:m7 fis:7|
+	b2.:m7 e:7 a:dim a |
+	fis2.:m7 b:7 e:maj7 e:6 |
+	cis2.:m fis:7 b:m9 e:7sus4
 }
+\include "template.ily"

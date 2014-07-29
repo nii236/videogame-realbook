@@ -4,6 +4,8 @@
 	composer = "Kinuyo Yamashita" 
 }
 
+\include "macros.ily"
+
 melody = \relative c' {
 	\clef treble
 	\key f \major
@@ -39,3 +41,5 @@ harmonies = \chordmode {
 	ais2:dim/e d:m ais:dim/cis d:m ais:dim/e a:7
 	d1:m bes2 c d1:m bes2 c
 }
+
+\include "template.ily"

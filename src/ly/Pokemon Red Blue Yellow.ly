@@ -3,7 +3,11 @@
 	subtitle = "Intro 2" 
 }
 
-\include "macros.ily"
+\paper {
+line-width = 15\cm
+indent = 0\cm
+}
+
 
 melody = \relative c' {
 	\clef treble
@@ -20,8 +24,8 @@ melody = \relative c' {
 		r2 \times 2/3 {c4 b c} |
 		\break
 		g4. b8 d2~ |
-		d2 \times 2/3 {c4 b c} |
-		d2 \times 2/3 {f4 e c} |
+		d2 \times 2/3{c4 b c} |
+		d2 \times 2/3{f4 e c} |
 		d2 \times 2/3 {c4 b c} |
 		\break
 		g4. b8 d2~ |
@@ -42,7 +46,7 @@ melody = \relative c' {
 		d8. d16 r8. d16 r8. d16 r8. d16 |
 		r8. d16 r8. d16 \times 2/3 {c4 c cis} |
 		d8. d16 r8. d16 r8. d16 r8. d16 |
-		r8. d16 r8. d16 \times 2/3 {c4 c b}
+		r8. d16 r8. d16 \times {c4 c b}
 	}
 
 }
@@ -57,5 +61,23 @@ harmonies = \chordmode {
 	bes1 s2. b4:dim c1 s2. cis4:dim
 	d1 s2 c4 cis:dim d1 s2 c4 g
 }
+\score {
+	<<
+	\new ChordNames {
+		\set chordChanges = ##t
+		\harmonies
+	}
+	\new Voice = "one" { \melody }
+	\new Lyrics \lyricsto "one" \text
+	>>
+	\layout { 
+		\context {
+			\Score
+			\override NonMusicalPaperColumn #'line-break-permission = ##f
+			\override NonMusicalPaperColumn #'page-break-permission = ##f
+		}
+	}
+	\midi {
 
-\include "template.ily"
+	}
+}

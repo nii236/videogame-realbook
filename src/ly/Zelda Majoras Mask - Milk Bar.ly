@@ -3,6 +3,8 @@
 	subtitle = "Milk Bar Theme" 
 }
 
+\include "macros.ily"
+
 melody = \relative c' {
 	\clef treble
 	\key bes \major
@@ -24,7 +26,7 @@ melody = \relative c' {
 	g4. d8~d2|
 	\break
 	r4 ees g8 a bes a~|
-	a4 a8 g a g f4 ~ |
+	a4 a8 g a g f4 |
 	bes4. a8 a4 bes~|
 	\time 6/4 bes8 a a4 bes bes c cis
 	\break
@@ -62,3 +64,4 @@ harmonies = \chordmode {
 	d:7 s g:m 
 	c:m7 f bes g:7
 }
+\include "template.ily"
