@@ -3,7 +3,7 @@
 	<<
 	\new ChordNames {
 		\set chordChanges = ##t
-		\harmonies
+%		\harmonies
 	}
 	\new Voice = "one" {\melody }
 	>>
@@ -14,5 +14,11 @@
 			\override NonMusicalPaperColumn #'page-break-permission = ##f
 		}
 
+	}
+	\midi{
+	  \context {
+	    \new Voice = "one" {\melody}
+	    
+	  }
 	}
 }
