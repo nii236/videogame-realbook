@@ -4,6 +4,7 @@
 }
 
 \include "macros.ily"
+\include "LilyJAZZ.ily"
 
 melody = \relative c'' {
 	\clef treble

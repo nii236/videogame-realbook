@@ -3,7 +3,7 @@
 	<<
 	\new ChordNames {
 		\set chordChanges = ##t
-%		\harmonies
+		\harmonies
 	}
 	\new Voice = "one" {\melody }
 	>>
